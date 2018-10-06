@@ -150,7 +150,7 @@ namespace ConsoleApp1
              result = sum / array3.Length;
 
             Console.WriteLine(result);
-*/
+
             //Crear un array de 11 ints. Pedir al usuario que introduzca valores entre 0 y 10. Cada vez que introduzca un dígito, 
             //añadir uno al valor en esa posición del array. Si por ejemplo introduce un 3, sumar uno a la posición 3. Mostrar en 
             //pantalla los valores. Si introduce un número mayor que 10, decir que ese número es incorrecto. Si introduce un número 
@@ -159,7 +159,7 @@ namespace ConsoleApp1
 
             int[] array4 = new int[11];
        
-            int num, result=0;
+            int num;
 
 
             do
@@ -167,26 +167,52 @@ namespace ConsoleApp1
                 Console.WriteLine("Type any number from 0 to 10");
                 num = Convert.ToInt32(Console.ReadLine());
 
-                int index = Array.IndexOf(array4, num);
-                if (index > -1)
+                //int index = Array.IndexOf(array4, num);
+                if (num >=0 && num < 11)
                 {
-                    result++;
-                }
+                    // add to a var everytime when user obey the conditions
+                    array4[num]++;
+                } else if (num > 10)
+                {
+                    Console.WriteLine("The number is wrong.It`s greater than 10");
+                } 
+                //to stop the loop when a negative number is entered and show the final table
+            } while (num >= 0);
 
-            } while (num >= 0 && num < 11);
-
-                //to display the table
-
-                for (int i = 0; i < array4.Length; i++)
+            for(int i = 0; i < array4.Length; i++)
             {
-                Console.WriteLine(i + " " + array4[i]);
+                Console.WriteLine(i + "\t " + array4[i]);
             }
-
+*/
             //Crear un array de 10 valores. Poner el valor 1 en cada una de la posición. 
             //Pedir al usuario que introduzca un número entre 0 y 9. Cada vez que introduzca un valor entre 0 y 9, 
             //mostrar el valor de esa posición del array, y modificarlo multiplicando por 2.
 
+            int[] arr = new int[10];
+            int num;
 
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = 1;
+                //Console.WriteLine(arr[i]);
+            }
+            
+
+            do
+            {
+                Console.WriteLine("Type any number from 0 to 9");
+                num = Convert.ToInt32(Console.ReadLine());
+
+                //int index = Array.IndexOf(array4, num);
+                if (num >= 0 && num < 10)
+                {
+                    // add to a var everytime when user obey the conditions
+                   int a = arr[num]*2;
+                    Console.WriteLine(arr[num] + a);
+                }
+
+               
+            } while (num >=0 && num <= 9);
 
             Console.ReadLine();
         
