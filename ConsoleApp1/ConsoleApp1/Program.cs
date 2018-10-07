@@ -189,14 +189,14 @@ namespace ConsoleApp1
             //mostrar el valor de esa posición del array, y modificarlo multiplicando por 2.
 
             int[] arr = new int[10];
-            int num;
+            int num, result = 0;
 
             for (int i = 0; i < arr.Length; i++)
             {
                 arr[i] = 1;
-                //Console.WriteLine(arr[i]);
+                //Console.Write(arr[i]);
             }
-            
+
 
             do
             {
@@ -204,15 +204,16 @@ namespace ConsoleApp1
                 num = Convert.ToInt32(Console.ReadLine());
 
                 //int index = Array.IndexOf(array4, num);
-                if (num >= 0 && num < 10)
+                if (num >= 0 && num <= 9)
                 {
                     // add to a var everytime when user obey the conditions
-                   int a = arr[num]*2;
-                    Console.WriteLine(arr[num] + a);
+                    int a = arr[num] * 2;
+                    result = arr[num] * 2 + result;
+                    Console.WriteLine(arr[num] + "\t" + result);
                 }
 
-               
-            } while (num >=0 && num <= 9);
+
+            } while (num >= 0 && num <= 9);
 
             Console.ReadLine();
         
